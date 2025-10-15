@@ -1,0 +1,20 @@
+/* ...existing code... */
+
+.profile-photo {
+	/* Keep the photo centered */
+	text-align: center;
+	margin: 2rem 0;
+}
+
+/* Make the profile image much smaller and crop to the face.
+   object-fit: cover makes the image fill the box while preserving aspect ratio.
+   object-position controls which part of the image is shown (tweak the values to center the face). */
+.profile-photo img {
+	width: 120px;          /* smaller width */
+	height: 120px;         /* same height to make a square crop */
+	border-radius: 50%;    /* keep rounded (circle) */
+	object-fit: cover;     /* crop and fill the square */
+	object-position: 50% 30%; /* try 50% 30% to focus higher (adjust as needed) */
+}
+
+/* ...existing code... */

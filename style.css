@@ -1,1 +1,23 @@
 /* Add you CSS here */
+/* Section styling */
+section {
+    padding: 2rem;
+    margin: 1rem auto;
+    max-width: 800px;
+    /* Center the content inside each section (headings, paragraphs, etc.) */
+    text-align: center;
+}
+
+/* Navigation styling */
+nav ul {
+    list-style: none;
+    /* Ensure the nav list is centered */
+    text-align: center;
+}
+
+/* Profile photo styling */
+.profile-photo {
+    /* Keep the photo centered */
+    text-align: center;
+    margin: 2rem 0;
+}
