@@ -2,97 +2,182 @@
 body {
 	/* ...existing code... */
 	font-family: Arial, sans-serif;
-	background: #f7f7f9;  /* subtle background */
-	color: #333;
-	margin: 0;
-	padding: 0;
-	/* center the card vertically and horizontally */
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
-	min-height: 100vh;
+	background-color: #f7f7f9;            /* fallback color if image not found */
+    background-image: url("/background.jpg"); /* image behind the card */
+    background-position: center;          /* center the image */
+    background-repeat: no-repeat;         /* do not tile the image */
+    background-size: cover;               /* cover the whole viewport */
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    /* center the card vertically and horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
 }
 
-/* Profile card container */
+/* Main card container */
 .card {
-	/* Keep the card centered and constrained in width */
-	max-width: 720px;
-	width: 90%;
-	background: white;
-	margin: 2.5rem auto;
-	padding: 1.5rem;
-	border-radius: 8px;
-	box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-	text-align: center; /* center text inside the card */
+    max-width: 720px;
+    width: 90%;
+    background: linear-gradient(to bottom, #B8E0FF, #6AB8FA, #2E8CE0); /* slightly lighter tones */
+    margin: 2.5rem auto;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    text-align: center;
+
+    /* Add subtle overlay + ensure strong contrast */
+    color: #000;
+    background-blend-mode: lighten;  /* enhances contrast subtly */
 }
 
-/* Larger profile photo frame centered in the card */
+/* Profile photo container */
 .profile-photo {
-	/* make a larger circular frame and center it */
-	display: block;
-	width: 200px;         /* bigger circle */
-	height: 200px;
-	margin: 0.5rem auto;  /* center horizontally with auto margins */
-	border-radius: 50%;
-	overflow: hidden;     /* crop image inside the circle */
+    display: block;
+    width: 250px;
+    height: 250px;
+    margin: 1.5rem auto 2rem;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
-/* Fill the circular frame, zoom slightly, and nudge left/up if needed */
+/* Profile photo image */
 .profile-photo img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	object-position: 35% 30%;
-	transform: scale(1.08);
-	display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 25% center;
+    transform: scale(1.15);
+    display: block;
+    border: none;
 }
 
 /* Name heading */
 h1 {
-	margin: 0.75rem 0 0.5rem 0;
-	font-size: 1.6rem;
+    margin: 0.75rem 0 0.5rem 0;
+    font-size: 2.4rem;
 }
 
-/* Navigation inside the card (simple centered links) */
+/* Navigation styles */
 .card-nav ul {
-	list-style: none;
-	padding: 0;
-	margin: 0.5rem 0 1rem 0;
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 1rem 0;
 }
 .card-nav ul li {
-	display: inline-block;
-	margin: 0 0.6rem;
+    display: inline-block;
+    margin: 0 0.6rem;
 }
 .card-nav a {
-	color: #0066cc;
-	text-decoration: none;
-	padding: 0.25rem 0.4rem;
+    color: #0066cc;
+    text-decoration: none;
+    padding: 0.25rem 0.4rem;
 }
 .card-nav a:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
-/* Section styling inside the card */
+/* Section styling */
 section {
-	padding: 0.75rem 0;
-	margin: 0;
+    padding: 1rem 0;
+    margin: 0 auto;
 }
 
 /* Skills list */
 .skills-list {
-	list-style: disc;
-	margin: 0.5rem auto;
-	padding-left: 1.2rem; /* simple indent for list */
-	max-width: 560px;
-	text-align: left;     /* keep list left-aligned for readability */
+    list-style: none;                /* remove default bullets */
+    margin: 0.75rem auto;
+    padding: 0;
+    max-width: 560px;
+    text-align: left;
+}
+
+/* Each skill item */
+.skills-list li {
+    background: rgba(255, 255, 255, 0.25); /* subtle contrast box */
+    margin: 0.4rem 0;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-weight: 500;
+    position: relative;
+    transition: background 0.2s ease;
+}
+
+/* Custom bullet using ::before */
+.skills-list li::before {
+    content: "•";
+    color: #003C99;                  /* accent blue that matches card */
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+/* Hover effect */
+.skills-list li:hover {
+    background: rgba(255, 255, 255, 0.4);
 }
 
 /* Contact details box */
 .contact-details {
-	background-color: #f4f4f4;
-	padding: 0.8rem;
-	border-radius: 6px;
-	display: inline-block;
-	text-align: left;
-	margin-top: 0.5rem;
+    background-color: #6ab8fa;
+    padding: 0.8rem;
+    border-radius: 6px;
+    display: inline-block;
+    text-align: left;
+    margin-top: 0.5rem;
+}
+
+/* NEW: each contact line with a small left icon, simple layout for beginners */
+.contact-item {
+    display: flex;                /* place icon and text on same line */
+    align-items: center;          /* vertically center them */
+    gap: 0.5rem;                  /* space between icon and text */
+    margin: 0.35rem 0;            /* small vertical spacing between rows */
+}
+
+/* Icon size and color — works with emoji or icon fonts (Font Awesome) */
+.contact-item .icon {
+    display: inline-block;
+    width: 1.1rem;
+    text-align: center;
+    font-size: 1.1rem;            /* controls emoji or font icon size */
+    color: #003C99;               /* blue accent that matches the card */
+}
+
+/* Make links inside contact details inherit color and get a small hover underline */
+.contact-details a {
+    color: inherit;
+    text-decoration: none;
+}
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+/* Optional: slightly bolder resume icon */
+.contact-item.resume .icon {
+    font-weight: 600;
+}
+
+/* Hover effect */
+.contact-details:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transition: background 0.2s ease;
+}
+
+/* Responsive tweak for small screens */
+@media (max-width: 480px) {
+    .card {
+        margin: 20px;
+        padding: 16px;
+    }
+    .profile-photo {
+        margin: 1rem auto 1.5rem;
+        width: 200px;
+        height: 200px;
+    }
+    .profile-photo img {
+        width: 200px;
+        height: 200px;
+    }
 }

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jeremy Schroeder - Personal Profile</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Optional: include Font Awesome if you want nicer icons (remove if already added) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Main profile card -->
@@ -33,10 +36,10 @@
             <p>
                 <!-- Add your personal description here -->
                 Hey everyone, 
-                Ever since I was little I have always loved numbers and puzzles, making data analytics a perfect route for me. I enjoy being able to solve the puzzles that huge sets of data have hidden within them! 🧩 I am currently in the Global Career Accelerator program for data analytics, allowing me to get hands-on experience with large sets of data to deliver data driven answers.
+                ever since I was little I have always loved numbers and puzzles, making data analytics a perfect route for me. I enjoy being able to solve the puzzles that huge sets of data have hidden within them! 🧩 I am currently in the Global Career Accelerator program for data analytics, allowing me to get hands-on experience with large sets of data to deliver data driven answers.
             </p>
             <p>
-                I am an Arizona State University graduate of May 2025 with my Bachelor's degree in Business Management! 🎓 I have studied topics in finance, economics, data analytics, and business management.
+                I am an Arizona State University graduate of May 2025 with my Bachelor's degree in Business Management! 🎓 With a 3.99 GPA!  I have studied topics in finance, economics, data analytics, and business management.
             </p>
             <p>
                 Throughout my work experience I have been in management and training positions, I love developing teams to achieve their best. Creating an environment of strong teamwork and understanding among a work group is important to me and a value I hold close to my work ethic.
@@ -48,8 +51,8 @@
             <h2>Skills & Certifications</h2>
             <!-- Simple list for beginners to edit -->
             <ul class="skills-list">
-                <li>Data Analysis (Excel, SQL, Python)</li>
-                <li>Visualization (Tableau)</li>
+                <li>Data Analysis:  Excel, SQL, Python</li>
+                <li>Visualization:  Tableau</li>
                 <li>Statistics & Problem Solving</li>
                 <li>Intercultural Communication</li>
                 <li>Certification: <a href="https://learn.microsoft.com/en-us/users/jeremyschroeder-6805/credentials/b71ed1ecbb6f6e4f?ref=https%3A%2F%2Fwww.linkedin.com%2F" target="_blank">Microsoft Certified: Azure Data Fundamentals</a> </li>
@@ -60,9 +63,34 @@
         <section id="contact">
             <h2>Contact Information</h2>
             <div class="contact-details">
-                <p><strong>Phone:</strong> (773)-757-4843</p>
-                <p><strong>Email:</strong> <a href="mailto:grayschro@gmail.com">grayschro@gmail.com</a></p>
-                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jeremy-gray-schroeder/" target="_blank">LinkedIn Profile</a></p>
+                <!-- phone (example uses Font Awesome if available, fallback is plain text) -->
+                <div class="contact-item">
+                    <span class="icon"><i class="fas fa-phone" aria-hidden="true"></i></span>
+                    <span>+1 (773)-757-4843</span>
+                </div>
+
+                <!-- email -->
+                <div class="contact-item">
+                    <span class="icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+                    <a href="mailto:you@example.com">grayschro@gmail.com</a>
+                </div>
+
+                <!-- linkedin -->
+                <div class="contact-item">
+                    <span class="icon"><i class="fab fa-linkedin" aria-hidden="true"></i></span>
+                    <a href="www.linkedin.com/in/jeremy-gray-schroeder" target="_blank" rel="noopener">My LinkedIn</a>
+                </div>
+
+                <!-- resume: uses File icon via Font Awesome; if Font Awesome is not loaded, use a simple emoji fallback -->
+                <div class="contact-item resume">
+                    <!-- If Font Awesome loaded, the <i> shows a file icon; otherwise the emoji is visible -->
+                    <span class="icon">
+                        <i class="fas fa-file-alt" aria-hidden="true"></i>
+                        <!-- fallback emoji for environments without the icon font -->
+                        
+                    </span>
+                    <a class="resume-link" href="https://docs.google.com/document/d/1b4VHLRTjTTiFsNtn9LQQlF0LssXvMGMWdh9A1wGn5Qo/edit?tab=t.0" target="_blank" rel="noopener">My Resume</a>
+                </div>
             </div>
         </section>
     </main>
