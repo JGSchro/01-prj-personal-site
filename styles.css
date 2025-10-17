@@ -3,7 +3,7 @@ body {
 	/* ...existing code... */
 	font-family: Arial, sans-serif;
 	background-color: #f7f7f9;            /* fallback color if image not found */
-    background-image: url("background.jpg"); /* image behind the card */
+    background-image: url("image/background.jpg"); /* image behind the card */
     background-position: center;          /* center the image */
     background-repeat: no-repeat;         /* do not tile the image */
     background-size: cover;               /* cover the whole viewport */
